@@ -12,6 +12,22 @@ use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
+
+
+    public function getUserInfo(Request $request)
+    {
+        $validated = $request->validate([
+            'user' => 'required|exists:users,id',
+        ]);
+
+        $user = $validated['user'];
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        return $user;
+    }
     public function UpdateName(Request $request)
     {
         $validateUser = Validator::make($request->all(), [

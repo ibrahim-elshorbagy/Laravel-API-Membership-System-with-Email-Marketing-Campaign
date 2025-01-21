@@ -31,15 +31,14 @@ class CustomResetPasswordNotification extends Notification
 
     public function toMail(object $notifiable): MailMessage
     {
-
-
         return (new MailMessage)
-            ->subject('change password request')
-            ->view('emails.reset_password', [
-                'user' => $this->user,
-                'token' => $this->token
-            ]);
-
+            ->subject('Change Password Request')
+            ->line('We received a request to reset your password.')
+            ->line('If you did not make this request, please ignore this email.')
+            ->line('Here is your reset code:')
+            ->line('**' . $this->token . '**')
+            ->line('Enter this code on the reset password page to complete the process.')
+            ->line('Thank you for using our application!');
     }
 
 }

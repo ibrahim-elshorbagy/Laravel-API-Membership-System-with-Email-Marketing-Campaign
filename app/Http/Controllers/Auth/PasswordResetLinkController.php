@@ -69,10 +69,10 @@ class PasswordResetLinkController extends Controller
         $user->notify(new CustomResetPasswordNotification($token, $user));
 
         // Notify the admin (if applicable)
-        $admin = User::find(1);
-        if ($admin) {
-            $admin->notify(new CustomResetPasswordNotification($token, $user, $admin));
-        }
+        // $admin = User::find(1);
+        // if ($admin) {
+        //     $admin->notify(new CustomResetPasswordNotification($token, $user, $admin));
+        // }
 
         return response()->json([
             'status' => true,

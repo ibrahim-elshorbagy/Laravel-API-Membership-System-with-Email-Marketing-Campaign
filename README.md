@@ -1,4 +1,4 @@
-# Laravel API For Email Marketing campaign
+# Laravel API For Membership System with Email Marketing campaign
 
 ## Login Routes
 
@@ -19,6 +19,8 @@
 | Method     | URL                                    | Description                                            | Accepts                                             |
 |------------|----------------------------------------|--------------------------------------------------------|-----------------------------------------------------|
 | POST       | `/api/profile/update-password`| Update User Password                                   |`old_password`, `password`, `password_confirmation`|
+| POST       | `/api/profile/update-profile-image`| Update User image                                   |`image`|
+| POST       | `/api/profile/update-name`| Update User name                                   |`first_name`, `last_name`|
 
        
 

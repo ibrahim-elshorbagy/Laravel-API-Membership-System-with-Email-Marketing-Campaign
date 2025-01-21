@@ -71,6 +71,8 @@ class RegisteredUserController extends Controller
                     'email' => $user->email,
                     'roles' => $roles,
                     'permissions'=>$permissions,
+                    'email_verified' => $user->hasVerifiedEmail() ? 'Verified' : 'Not Verified',
+
                 ]
             ], 201);
     }
